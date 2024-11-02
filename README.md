@@ -67,7 +67,75 @@ para nuestro usuario y los usuario que formen parte de nuestro grupo mediante el
 Dentro de este directorio, ejecutaremos un **"git clone"** para poder descargar los archivos del repositorio especificado en el enunciado de la practica mediante este enlace "https://github.com/josejuansanchez/iaw-practica-lamp.git":
 ![image](https://github.com/user-attachments/assets/fff1bc22-a3f6-4038-bf43-314f48725efc)
 
-Movemos los archivos que estan dentro de la carpeta **"iaw-practica-lamp"** 
+Movemos los archivos que estan dentro de la carpeta **"iaw-practica-lamp"** a la carpeta **"Gestion_Usuarios"** con el comando **"sudo mv iaw-practica-lamp/* /var/www/html/Gestion-Usuarios/"** y posteriormente eliminaremos el directorio clonado:
+![image](https://github.com/user-attachments/assets/34b65648-15a7-4c84-b3d1-b5d450f716dd)
+![image](https://github.com/user-attachments/assets/e23fa4c8-e4ad-4d4e-8d2f-b3a280710095)
+
+La carpeta imprtante para esta prctica en la maquina apache es la carpeta **"src"** (search/recursos) en donde se encuentra el sitio al que querremos acceder. Dentro de este se encuantran los dos archivos mas importantes, clo cuales son el llamado **"config.php"** y **"index.php"**. El index.php como tal es el host al que vamos a dirigirnos atraves del navegador y el config.php es el archivo que necesitamos para que mediante la maquina de mysql este host virtual se conecte a la base de datos y funcione como tal la aplicación web:
+![image](https://github.com/user-attachments/assets/46ed4f6e-8201-4c0e-9225-8a1dfe52d3b3)
+
+Ahora nos dirigiremos al directorio de los sitos-disponibles o sites-availables cuya ruta sera **"/etc/apache2/sites-available"**, dentro de este crearemos ua copia del archivo que por defecto apache crea para su host virtual inicial, llamado **"000-default.conf"** y lo llamaremos a la copia **"gest-user.conf"**:
+![image](https://github.com/user-attachments/assets/159a1b73-8dd3-4cef-927c-bdc9a541b956)
+
+Posterior a lo anterior editaremos con nano el fichero nuevo y en la linea del document root le añariremos que se diriga a /Gestion_Usuarios/src para poder lanzar la aplicación web de forma correcta mediante el fichero index-php:
+![image](https://github.com/user-attachments/assets/4d903265-6c93-4095-881b-04bfc8619067)
+
+Una vez hecho todos los paso anteriores, mediante el comando **"sudo a2dissite 000-default.conf"** desabilitaremos este archivo de configuración y mediante el comando **"sudo a2ensite gest-user.conf"** habilitaremos el nuevo archivo de configuración de nuestra aplicación web y para guardar los cambios reiniciaremos el servicio de apache2 con el comando **"sytemctl restart apache2"**:
+![image](https://github.com/user-attachments/assets/14e1189e-f03e-4e10-a705-fb6eee116cf4)
+
+
+#### 3.3 Configuración de la maquina MySQL
+
+##### 3.3.1 Actualización e intalación de MySQL
+Ahora nos saldremos de la maquina apache diridiremos a la maquina de **"MySQL"** denominada **"Maquina02"**, e iniciamos el proceso de actualización e instalación de servicios,etc:
+![image](https://github.com/user-attachments/assets/a09fb063-6e53-4589-9bf4-d1a79764742d)
+
+* Actualizamos la lista de paquetes:
+  ![image](https://github.com/user-attachments/assets/d96a3fe8-1ef1-4898-a460-98de0095cd6a)
+
+* Actualiamos los paquetes a la ultima versión:
+  ![image](https://github.com/user-attachments/assets/d688172e-c1b5-4ce8-bfd0-df4fe252aff5)
+
+* Comprobamos que tenemos instalado la aplicación de Git en la maquina de mysql:
+  ![image](https://github.com/user-attachments/assets/0549e348-c4f8-48af-9cb9-055bb956b885)
+
+* Instalamos MySQL-Server:
+  ![image](https://github.com/user-attachments/assets/2a8fe3e0-8a93-4149-a969-a2c992dc44b1)
+
+##### 3.3.2 Configuración de MySQL
+Una vez instalado mysql, iniciaremos el servicio y comprobaremos que este funciona de manera correcta como hicimos con apache:
+![image](https://github.com/user-attachments/assets/ec382fdf-945f-435e-b5fa-da7f8ce63ab2)
+
+Ahora haremos otro git clone desde el mismo enlace que tenemos en el enunciado de la paractica, pero esta vez eliminaremos la caperpeta src y el archivo README y dejaremos solo el directorio db con el archivo de la base de datos para poder importarlo a mysql:
+![image](https://github.com/user-attachments/assets/460c4200-4a33-460e-98d8-de900dca2ef2)
+
+Iniciaremos sesión en mysql con el usuario root he importaremos la base de datos que se encuantra en el ficheros .sql:
+![image](https://github.com/user-attachments/assets/0bff3998-cfb5-44fe-8eea-3e25baf4b4cf)
+
+Crearemos el usuario "carlos" con la dirección ip de la maquina apache "carlos@192.168.1.2", le daremos todos los privilegios sobre la base de datos lamp_db y reiniciaremos el servicio de mysql para guardar los cambios, comprobando al iniciar sesion con el usuario carlos que podemos usar la base de datos:
+![image](https://github.com/user-attachments/assets/7bcb2870-2acc-497b-b190-d5fc3d70f166)
+
+Posteriormente el el archivo de configuración de mysql cambiaremos la being address por la direción ip de la maquina de mysql y reiniciamos el servicio de mysql:
+![image](https://github.com/user-attachments/assets/b69c15e8-2fa8-4f91-a01a-e56c59035539)
+![image](https://github.com/user-attachments/assets/c603c5b0-4452-4e15-a098-43f99dc8a9b5)
+
+Una vez finalizado lo anterior, no dirigiremos al archivo de configuracion del php en la maquina apache y cambiaremos todos los parametros como se muestra en la captura:
+![image](https://github.com/user-attachments/assets/21f647a0-451e-46b3-9f76-03019825f61a)
+
+Tras esto reiniciamos el servicio de apache y comprobamos en el navegador si podemos acceder a la base de datos:
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
