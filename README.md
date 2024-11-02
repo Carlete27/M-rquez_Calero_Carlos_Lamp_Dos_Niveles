@@ -29,4 +29,17 @@ Ejemplo de como seria en este caso la disposición del vagrantfile:
 
 #### 3.2 Configuración de la Maquina Apache
 ##### 3.2.1 Actualización de la Maquina e Instlación de Apache
+Para iniciar las dos maquinas utilizaremos el comando "vagrant up". Una vez iniciadas nos conectaremos via ssh a la maquina apache denominada "Maquina01" con el siguiente comando "vagrant ssh Maquina01":
+![image](https://github.com/user-attachments/assets/1623c90d-b958-4098-bb1e-11838a9be3d4)
+
+Una vez dentro ejecutaresmos dos comando para poder actualizar la lista de repositorios y despues los repositorios a la ultima versión:
+
+* Actualizamos la lista de paquetes:
+  ![image](https://github.com/user-attachments/assets/8e6ff61f-6e20-4333-8214-8b0646c7b98d)
+
+* Actualiamos los paquetes a la ultima versión:
+  ![image](https://github.com/user-attachments/assets/4a9b3ff9-b23c-48c3-a1f9-315f22b1a7c7)
+
+
+
 
