@@ -48,12 +48,11 @@ Una vez dentro ejecutaremos dos comandos para poder actualizar la lista de repos
   ![image](https://github.com/user-attachments/assets/d9f4e53f-68b0-4b8d-87f9-a126820e12e9)
 
 ##### 3.2.2 Configuración de apache y recursos necesarios
-Una vez instalado apache2, comprobamos que este este iniciado de forma correcta:
+Una vez instalado apache2, comprobamos que este este iniciado de forma correcta, para ello iniciaremos la instancia de apache mediante el comando "systemctl start apache2" y ejecutaremos posteriormente
+el siguiente comando "systemctl status apache2" prar ver el estado del servicio:
 ![image](https://github.com/user-attachments/assets/5c40e6bb-708b-411d-9a00-a297d6142038)
 
-
-
-
-
+Entraremos al navegador y escribiremos "http://localhost:8080" y comprobaremos que se abre apache en el navegador:
+![image](https://github.com/user-attachments/assets/9767955c-309d-4fae-942c-3ba2a09ffe32)
 
 
