@@ -123,6 +123,8 @@ Una vez finalizado lo anterior, no dirigiremos al archivo de configuracion del p
 ![image](https://github.com/user-attachments/assets/21f647a0-451e-46b3-9f76-03019825f61a)
 
 Tras esto reiniciamos el servicio de apache y comprobamos en el navegador si podemos acceder a la base de datos:
+https://github.com/user-attachments/assets/955f8dee-eb8a-44f4-a868-2205a1e2e2a9
+
 
 
 
