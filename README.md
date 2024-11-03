@@ -4,8 +4,7 @@
 #### 1. Introducción
 #### 2. Objetivo
 #### 3. Desarrollo
-#### 4. Conclusión
-#### 5. Recursos
+#### 4. Recursos
 
 ## 1. Introducción
 En esta practica vamos a desplegar una aplicación web sencilla, utilizando dos aplicaciones, como lo son **Vagrant** y **Virtual Box** para virtualizar un entorno digital
@@ -124,6 +123,10 @@ Una vez finalizado lo anterior, no dirigiremos al archivo de configuracion del p
 
 Tras esto reiniciamos el servicio de apache y comprobamos en el navegador si podemos acceder a la base de datos:
 https://github.com/user-attachments/assets/955f8dee-eb8a-44f4-a868-2205a1e2e2a9
+
+## 4. Recursos
+
+Para finalizar la práctica, realizare la composición de dos archivos bash o .sh para poder automatizar todo el proceso mostrado anteriormente y que su puesta en marcha sea lo mas rapido posible. 
 
 
 
